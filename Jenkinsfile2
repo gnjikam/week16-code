@@ -6,7 +6,7 @@ pipeline{
     stages{
       stage('sonarqube scanner'){
         steps{
-          withsonarserver('sonar-server'){
+          withSonarQubeEnv('sonar-server'){
           sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=gnjikam_week16-code
 '
         }

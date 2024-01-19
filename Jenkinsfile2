@@ -7,14 +7,14 @@ pipeline{
       stage('sonarqube scanner'){
         steps{
           withSonarQubeEnv('sonarserver'){
-          sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=gnjikam_week16-code'
+              sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=kserge2001_week16-code'
           }
         }
       }
       
         stage('maven commands'){
             steps{
-              sh 'mvn clean compile test install package'  
+              sh 'mvn clean compile install package'  
             } 
         }
     }
